@@ -6,10 +6,11 @@ RUN apt-get install -y clang libclang-dev curl
 
 RUN git clone https://github.com/ruby/ruby.git ~/clones/ruby
 
-ENV RUBY_VERSION=3.0.2
+ENV RUBY_VERSION=3.0.3
 
 WORKDIR /root/clones/ruby
-RUN git checkout v${RUBY_VERSION}
+RUN git checkout 3922394c85b33315483b65eeeac36613deaf0433
+#v${RUBY_VERSION}
 RUN autoconf
 RUN ./configure --disable-install-doc
 RUN make

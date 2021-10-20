@@ -18,7 +18,7 @@ echo "#include </tmp/headers/$1/iseq.h>" >> /tmp/wrapper.h
 rm -rf /tmp/headers/$1
 mkdir -p /tmp/headers/$1
 
-(cd $ruby_src_dir && git checkout v$1)
+(cd $ruby_src_dir && git checkout 3922394c85b33315483b65eeeac36613deaf0433) #v$1)
 cp -R "$ruby_src_dir/include" /tmp/headers/$1
 if [ -e "$ruby_src_dir/internal" ]
 then

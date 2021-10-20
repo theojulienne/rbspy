@@ -809,7 +809,7 @@ macro_rules! get_cfunc_name(
                 imemo_type_imemo_ment => Ok(&imemo as *const rb_method_entry_struct),
                 imemo_type_imemo_svar => {
                     let svar: vm_svar = source.copy_struct(raw_imemo).context(raw_imemo)?;
-                    check_method_entry(svar.cref_or_me, source)
+                    check_method_entry(svar.cref_or_me as usize, source)
                 },
                 _ => Ok(raw_imemo as *const rb_method_entry_struct)
             }
@@ -1002,6 +1002,7 @@ ruby_version_v2_7_x!(ruby_2_7_4);
 ruby_version_v3_0_x!(ruby_3_0_0);
 ruby_version_v3_0_x!(ruby_3_0_1);
 ruby_version_v3_0_x!(ruby_3_0_2);
+ruby_version_v3_0_x!(ruby_3_0_3);
 
 #[cfg(test)]
 mod tests {
