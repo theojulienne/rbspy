@@ -33,7 +33,7 @@ extern crate winapi;
 
 use anyhow::{Error, Result};
 
-mod core;
+pub mod core;
 pub mod recorder;
 pub mod sampler;
 mod storage;
